@@ -3,24 +3,24 @@
 import json
 
 
-class FileStorage
+class FileStorage:
 
 
-""" Create a Class FileStorage that serializes
-instances to a JSON file and deserializes JSON file to instances"""
+    """ Create a Class FileStorage that serializes
+    instances to a JSON file and deserializes JSON file to instances"""
 
 
-def __init__(self, file_path):
-    """ Init private attributes """
-    self.__file_path = file_path
-    self.__objects = {}
+    def __init__(self, file_path):
+        """ Init private attributes """
+        self.__file_path = file_path
+        self.__objects = {}
 
     @property
-    def get_file(self):
+    def file_path(self):
         """Getter for file_path"""
         return self.__file_path
-
-    @setter
+    
+    @file_path.setter
     def set_file(self, value):
         """Setter for file_path"""
         self.__file_path = value
