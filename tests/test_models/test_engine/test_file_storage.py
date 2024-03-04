@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module for test FileStorage class """
 from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 import unittest
 
 """ class test DefineFileStorage """
@@ -49,6 +50,9 @@ class TestDefineFileStorage(unittest.TestCase):
         self.assertIsInstance(storage, FileStorage)
 
 
+""" Class Test verify attributes file and objects """
+
+
 class TestAttributes(unittest.TestCase):
     def test_filepath_attribute(self):
         """ test file_path private attribute """
@@ -63,6 +67,53 @@ class TestAttributes(unittest.TestCase):
         self.assertIsInstance(storage._FileStorage__objects, dict)
         self.assertEqual(len(storage._FileStorage__objects), 0)
 
+    def test_objects_notempty(self):
+        """ test objects not empty """
+        file_path = "file.json"
+        storage = FileStorage(file_path)
+        object1 = BaseModel()
+        storage.new(object1)
+        key = "{}.{}".format(object1.__class__.__name__, object1.id)
+        self.assertIn(key, storage._FileStorage__objects)
+        self.assertEqual(storage._FileStorage__objects[key], object1)
 
-if __name__ == '__main__':
-    unittest.main()
+
+class TestInstancesStoraged(unittest.TestCase):
+    def test_objects_storaged(self):
+        """ tests return objects storaged """
+        file_path = "file.json"
+        storage = FileStorage(file_path)
+        obj1 = BaseModel()
+        obj2 = BaseModel()
+        obj3 = BaseModel()
+        storage.new(obj1)
+        storage.new(obj2)
+        storage.new(obj3)
+        all_objects = storage.all()
+        self.assertIsInstance(all_objects, dict)
+        self.assertIn("BaseModel." + obj1.id, all_objects)
+        self.assertIn("BaseModel." + obj2.id, all_objects)
+        self.assertIn("BaseModel." + obj3.id, all_objects)
+
+
+""" Class Test Serialization objects to the JSON file """
+
+
+class TestSerializationToJSON(unittest.TestCase):
+    def test_serialize_objects(self):
+        file_path = "file.json"
+        storage = FileStorage(file_path)
+        obj = BaseModel()
+
+        storage.new(obj)
+
+        storage.save()
+
+        self.assertTrue(os.path.exists(file_path))
+
+        with open(file_path, "r") as json_file:
+            json_data = json.load(json_file)
+
+        self.assertIn("BaseModel.{}".format(obj.id), json_data)
+
+        os.remove(file_path)
