@@ -10,5 +10,5 @@ from models.base_model import BaseModel
 
 
 
-class Test_Base(unittest.TestCase):
+class TestDefineBaseModel(unittest.TestCase):
     """test for base model class"""
