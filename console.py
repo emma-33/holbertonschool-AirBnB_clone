@@ -35,6 +35,32 @@ class HBNBCommand(cmd.Cmd):
             
             except KeyError:
                 print("** class doesn't exist")
+    
+    def do_show(self, arg):
+        """display representation of instance"""
+        args = arg.split()
+        
+        if not args:
+            print("** class name missing **")
+        
+        else:
+            class_name = args[0]
+        
+        if class_name not in globals():
+            print("** class doesn't exist **")
+        
+        elif len(args) < 2:
+            print("** instance id missing **")
+        
+        else:
+            instance_id = args[1]
+            instance_key = f"{class_name}.{instance_id}"
+            
+            if instance_key not in BaseModel.instances:
+                print("** no instance found **")
+            
+            else:
+                print(BaseModel.instances[instance_key].to_dict())
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
