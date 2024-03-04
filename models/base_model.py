@@ -1,6 +1,7 @@
 #!/usr/bin/pyhton3
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
