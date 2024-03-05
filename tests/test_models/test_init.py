@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 """Unittest for base __init__ module"""
 
-
-
 import unittest
 from models.engine.file_storage import FileStorage
-
 
 
 class Test_file_storage(unittest.TestCase):
@@ -14,4 +11,6 @@ class Test_file_storage(unittest.TestCase):
         file_storage = FileStorage()
         self.assertIsInstance(file_storage, FileStorage)
 
-    
+
+if __name__ == '__main__':
+    unittest.main()
