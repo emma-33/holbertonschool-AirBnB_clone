@@ -136,7 +136,6 @@ class HBNBCommand(cmd.Cmd):
             for instance in instance_list:
                 print(instance.to_dict())
 
-
     def do_update(self, arg):
         """Update an instance with id and class information"""
         args = arg.split()
