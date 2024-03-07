@@ -21,7 +21,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-    
+
     def __str__(self):
         """Representation to a string"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

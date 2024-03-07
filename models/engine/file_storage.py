@@ -35,8 +35,10 @@ class FileStorage:
             with open(self.__file_path, "r", encoding="utf-8") as jsonfile:
                 json_dict = json.load(jsonfile)
                 for key, value in json_dict.items():
-                    value['created_at'] = datetime.strptime(value['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
-                    value['updated_at'] = datetime.strptime(value['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+                    value['created_at'] = datetime.strptime(
+                        value['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+                    value['updated_at'] = datetime.strptime(
+                        value['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
                     obj_class = eval(key.split(".")[0])
                     obj_instance = obj_class(**value)
                     self.__objects[key] = obj_instance
