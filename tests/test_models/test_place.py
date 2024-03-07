@@ -9,9 +9,12 @@ from models.place import Place
 class TestPlaceInit(unittest.TestCase):
     """test to check if attributes exists"""
     def test_has_attribute(self):
-        attributes = ["id", "created_at", "updated_at", "city_id", "user_id",
-                      "name", "description", "number_rooms", "number_bathrooms",
-                      "max_guest", "price_by_night", "latitude", "longitude",
+        attributes = ["id", "created_at", "updated_at", "city_id",
+                      "user_id",
+                      "name", "description", "number_rooms",
+                      "number_bathrooms",
+                      "max_guest", "price_by_night", "latitude",
+                      "longitude",
                       "amenity_ids"]
         my_place = Place()
         for name in attributes:
