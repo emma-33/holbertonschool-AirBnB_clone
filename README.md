@@ -43,6 +43,6 @@ Command update
 
 ## Authors
 
-- [@Nassim Abaida](https://www.github.com/Nassim-33150)
+- [@Nassim Abaida](https://www.github.com/Nassim33150)
 - [@Emma Lateyron](https://www.github.com/Emma-33)
 - [@Gabriel Milan](https://www.github.com/MadMartigan3)
