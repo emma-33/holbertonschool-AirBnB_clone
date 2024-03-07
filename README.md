@@ -11,8 +11,10 @@ It allows you to use various commands such as EOF, Help, Quit, Create, Show, All
 
 To access the command, you need to write "console.py" and this will open the interface, which will be displayed as shown below:
 
+![Console Exemple](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/0e837159-3948-49ce-b8f9-08c4fe0e45b9)
 
-## Examples
+## Example
+
 
 Command Help
 
