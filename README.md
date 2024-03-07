@@ -18,22 +18,27 @@ To access the command, you need to write "console.py" and this will open the int
 
 Command Help
 
+![Console Help Example](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/446284cc-bcba-4df0-afaa-36a5e4698ed9)
 
 
 Command create
 
+![Console Create example](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/0b032704-d3f5-43f2-8274-ae01f7d49831)
 
 
 Command all
 
+![Console all Example](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/6d33dd39-2edd-46df-821e-35c13f2b81f8)
 
 
 Command show
 
+![Console Show Example](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/312d3a61-9810-4b1b-baf6-956f3ea8a7cd)
 
 
 Command update
 
+![Console Update Example](https://github.com/Nassim33150/holbertonschool-AirBnB_clone/assets/105434715/0d2e4869-ac42-4000-b891-91b23a126119)
 
 
 ## Authors
