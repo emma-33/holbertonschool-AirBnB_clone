@@ -1,14 +1,13 @@
 #!/usr/bin/pyhton3
 import uuid
 from datetime import datetime
-
 import models
-
+"""BaseModel module"""
 
 class BaseModel:
     """Create a Class BaseModel"""
     def __init__(self, *args, **kwargs):
-        """Init attribute"""
+        """Initialize attributes"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
